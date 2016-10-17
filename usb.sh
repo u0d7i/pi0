@@ -13,7 +13,9 @@ usb_serialnr="000000"
 usb_manufacturer="Acme"
 usb_product="USB Device"
 
-
+# is_pizero
+grep -q "^Revision\s*:\s*[ 123][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]09[0-9a-fA-F]$" /proc/cpuinfo || exit
+# has_configfs
 test -d ${BASE} || exit
 
 # common
